@@ -7,5 +7,5 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'minhaCasaMinhaDivida';
+  title = 'Imobiliária Minha Casa Minha Dívida';
 }

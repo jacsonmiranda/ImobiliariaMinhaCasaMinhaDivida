@@ -1,27 +1,29 @@
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-        <a routerLink="imoveis" class="nav-link" routerLinkActive="active">Lista de Imóveis</a>
-    </li>
-    <li class="nav-item">
-        <a routerLink="add" class="nav-link" routerLinkActive="active">Adicionar Imóvel</a>
-    </li>
-  </ul>
-</nav>
-<div class="container">
-  <br>
-  <h2 style="text-align: center;">{{title}}</h2>
-  <hr>
-  <div class="card">
-    <div class="card-body">
-  <router-outlet></router-outlet>
+<div class="container-width">
+
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+          <a routerLink="imoveis" class="nav-link" routerLinkActive="active">Lista de Imóveis</a>
+      </li>
+      <li class="nav-item">
+          <a routerLink="add" class="nav-link" routerLinkActive="active">Adicionar Imóvel</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2 style="text-align: center;">{{title}}</h2>
+    <div class="container">
+      <div class="">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
-</div>
 
-<footer class="footer">
-  <div class="container">
+  <footer class="footer">
+    <div class="container">
       <span>Desenvolvido por Jacson - Marco</span>
-  </div>
-</footer>
+    </div>
+  </footer>
+
+</div>

@@ -13,16 +13,16 @@ export class PropertydetailComponent {
   @Input() property: Property;
 
   @Output() refreshPropertyList: EventEmitter<boolean> = new EventEmitter<boolean>();
-  
+
   // Service injected in constructor
-  constructor(private PropertyService: PropertyService, private router: Router) { 
+  constructor(private PropertyService: PropertyService, private router: Router) {
   }
 
   // Method to edit property details
   editProperty(){
     this.router.navigate(["EditProperty/"+ this.property.id]);
   }
-  
+
   // Method to delete an property
   deleteProperty(propertyToBeDeleted: Property){
     var result = confirm("Are you sure, you want to delete this Property?");
@@ -30,6 +30,6 @@ export class PropertydetailComponent {
       this.propertyService.deleteProperty(this.property.id);
       this.refreshPropertyList.emit(true);
       this.router.navigate(["Property"]);
-    } 
+    }
   }
 }

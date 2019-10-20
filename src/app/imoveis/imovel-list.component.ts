@@ -1,7 +1,7 @@
-import { ImovelDetaisComponent } from '../employee-details/ImovelDetaisComponent';
+import { ImovelDetailsComponent } from './imovel-details.component';
 import { Observable } from "rxjs";
-import { ImoveisService } from "../imovel.service";
-import { Imovel } from "imovel";
+import { ImovelService } from "./imovel.service";
+import { Imovel } from "./imovel";
 import { Component, OnInit } from "@angular/core";
 import { Router } from '@angular/router';
 
@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class ImovelListComponent implements OnInit {
   imoveis: Observable<Imovel[]>;
 
-  constructor(private ImovelService: ImovelService,
+  constructor(private imovelService: ImovelService,
     private router: Router) {}
 
   ngOnInit() {
@@ -21,10 +21,10 @@ export class ImovelListComponent implements OnInit {
   }
 
   reloadData() {
-    this.imoveis = this.imovelService.getImovelList();
+    this.imoveis = this.imovelService.getImoveisList();
   }
 
-  deleteImovel(id: Bigint) {
+  deleteImovel(id: number) {
     this.imovelService.deleteImovel(id)
       .subscribe(
         data => {
@@ -34,7 +34,7 @@ export class ImovelListComponent implements OnInit {
         error => console.log(error));
   }
 
-  imovelDetails(id: Bigint){
+  imovelDetails(id: number){
     this.router.navigate(['details', id]);
   }
 }

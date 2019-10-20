@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ImovelService {
 
-  private baseUrl = 'http://localhost:8080/springboot-crud-rest/api/v1/employees';
+  private baseUrl = '';
 
   constructor(private http: HttpClient) { }
 

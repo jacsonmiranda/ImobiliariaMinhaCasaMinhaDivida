@@ -1,9 +1,9 @@
-import { ImovelDetailsComponent } from './imovel/imovel-details.component';
-import { CreateImovelComponent } from './imovel/create-imovel.component';
+import { ImovelDetailsComponent } from './imoveis/imovel-details.component';
+import { CreateImovelComponent } from './imoveis/create-imovel.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ImovelListComponent } from './imovel/imovel-list.component';
-import { UpdateImovelComponent } from './imovel/update-imovel.component';
+import { ImovelListComponent } from './imoveis/imovel-list.component';
+import { UpdateImovelComponent } from './imoveis/update-imovel.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'imovel', pathMatch: 'full' },
