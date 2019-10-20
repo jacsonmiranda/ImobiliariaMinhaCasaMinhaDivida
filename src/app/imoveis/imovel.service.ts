@@ -1,0 +1,33 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ImovelService {
+
+  private baseUrl = 'http://localhost:8080/springboot-crud-rest/api/v1/employees';
+
+  constructor(private http: HttpClient) { }
+
+  getImovel(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${id}`);
+  }
+
+  createImovel(imovel: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}`, imovel);
+  }
+
+  updateImovel(id: number, value: any): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/${id}`, value);
+  }
+
+  deleteImovel(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+  }
+
+  getImoveisList(): Observable<any> {
+    return this.http.get(`${this.baseUrl}`);
+  }
+}

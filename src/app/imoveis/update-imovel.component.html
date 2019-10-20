@@ -1,0 +1,20 @@
+<h3>Editar Imovél</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">First Name</label>
+      <input type="text" class="form-control" id="id_endereco" required [(ngModel)]="imovel.endereco" name="endereco">
+    </div>
+    <div class="form-group">
+      <label for="name">Last Name</label>
+      <input type="text" class="form-control" id="valor" required [(ngModel)]="imovel.valor" name="valor">
+    </div>
+
+    <div class="form-group">
+      <label for="name">First Name</label>
+      <input type="text" class="form-control" id="nomeCorretor" required [(ngModel)]="imovel.corretor" name="imovel.corretor">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>

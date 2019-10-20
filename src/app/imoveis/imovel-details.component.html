@@ -1,0 +1,18 @@
+<h2>Detalhe do Imóvel</h2>
+
+<hr/>
+<div *ngIf="imovel">
+  <div>
+    <label><b>Endereço: </b></label> {{imovel.endereco}}
+  </div>
+  <div>
+    <label><b>Valor: </b></label> {{imovel.valor}}
+  </div>
+  <div>
+    <label><b>Proprietário: </b></label> {{imovel.proprietario}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Volta para a lista de Imóveis</button><br>

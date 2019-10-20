@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Lista de Imoveis</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Endereco</th>
+          <th>Preço</th>
+          <th>Corretor</th>
+          <th>Proprietário</th>
+          <th>Telefone Proprietário</th>
+          <th>E-mail Proprietário</th>
+          <th>Aceita Negociação?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees | async">
+          <td>{{imovel.endereco}}</td>
+          <td>{{imovel.preco}}</td>
+          <td>{{imovel.corretor}}</td>
+          <td>{{imovel.proprietario}}</td>
+          <td>{{imovel.telefone_proprietario}}</td>
+          <td>{{imovel.email_proprietario}}</td>
+          <td>{{imovel.aceita_negociacao}}</td>
+          <td><button (click)="deleteImovel(imovel.id)" class="btn btn-danger">Deletar</button>
+              <button (click)="imovelDetails(imovel.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
