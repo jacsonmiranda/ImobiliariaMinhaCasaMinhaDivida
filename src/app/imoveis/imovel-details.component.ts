@@ -20,7 +20,7 @@ export class ImovelDetailsComponent implements OnInit {
   ngOnInit() {
     this.imovel = new Imovel();
 
-    this.id = this.route.snapshot.params['id'];
+    this.id = this.route.snapshot.params['id_imovel'];
 
     this.imovelService.getImovel(this.id)
       .subscribe(data => {

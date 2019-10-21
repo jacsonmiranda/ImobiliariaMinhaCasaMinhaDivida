@@ -24,7 +24,7 @@ export class ImovelListComponent implements OnInit {
     this.imoveis = this.imovelService.getImoveisList();
   }
 
-  deleteImovel(id: number) {
+  deleteImovel(id_imovel: number) {
     this.imovelService.deleteImovel(id)
       .subscribe(
         data => {
@@ -35,6 +35,6 @@ export class ImovelListComponent implements OnInit {
   }
 
   imovelDetails(id: number){
-    this.router.navigate(['details', id]);
+    this.router.navigate(['details', id_imovel]);
   }
 }

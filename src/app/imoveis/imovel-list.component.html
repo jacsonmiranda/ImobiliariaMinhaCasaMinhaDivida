@@ -7,15 +7,15 @@
       <thead>
         <tr>
           <th>Endereco</th>
-          <th>Preço</th>
+          <th>Valor</th>
           <th>Corretor</th>
           <th>Proprietário</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let employee of employees | async">
-          <td>{{imovel.endereco}}</td>
-          <td>{{imovel.preco}}</td>
+        <tr *ngFor="let imovel of imoveis | async">
+          <td>{{imovel.id_imovel}}</td>
+          <td>{{imovel.valor}}</td>
           <td>{{imovel.corretor}}</td>
           <td>{{imovel.proprietario}}</td>
           <td><button (click)="deleteImovel(imovel.id)" class="btn btn-danger">Deletar</button>

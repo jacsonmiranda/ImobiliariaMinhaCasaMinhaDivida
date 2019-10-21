@@ -7,27 +7,36 @@ import { Observable } from 'rxjs';
 })
 export class ImovelService {
 
-  private baseUrl = '';
+  allImoveis:Imovel[] = [
+    {
+      "id": "1",
+      "endereco": "Lalit",
+      "valor": "9999",
+      "corretor": "Jorge",
+      "proprietario": "Associate Lead"
+    }
+  ];
+  getAllImoveis():Imovel[]{
+      return this.allImoveis;
+    }
 
-  constructor(private http: HttpClient) { }
+    addImovel(imovel:Imovel){
+      this.allImoveis.push(imovel);
+    }
 
-  getImovel(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${id}`);
+    updateImovel(imovel:Imovel){
+      var updateImovel = this.allImoveis.find(emp => emp.id == imovel.id);
+      updateImovel.endereco = imovel.endereco;
+      updateImovel.valor = imovel.valor;
+      updateImovel.corretor = imovel.corretor;
+      updateImovel.proprietario = imovel.proprietario;
+    }
+
+    deleteImovel(id:string){
+      this.allImoveis = this.allImoveis.filter(imovel => imovel.id != id);
+    }
+
+    getImovel(id:string):Imoveis{
+      return this.allImoveis.find(emp => emp.id == id);
+    }
   }
-
-  createImovel(imovel: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, imovel);
-  }
-
-  updateImovel(id: number, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/${id}`, value);
-  }
-
-  deleteImovel(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
-  }
-
-  getImoveisList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
-  }
-}

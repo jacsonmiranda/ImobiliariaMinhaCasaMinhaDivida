@@ -3,7 +3,7 @@
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Endereço do Imovél</label>
-      <input type="text" class="form-control" id="id_endereco" required [(ngModel)]="imovel.endereco" name="endereco">
+      <input type="text" class="form-control" id="id_endereco" required [(ngModel)]="imovel.id_imovel" name="endereco">
     </div>
 
     <div class="form-group">
@@ -13,7 +13,7 @@
 
     <div class="form-group">
       <label for="name">Nome Corretor</label>
-      <input type="text" class="form-control" id="nomeCorretor" required [(ngModel)]="imovel.corretor" name="imovel.corretor">
+      <input type="text" class="form-control" id="nomeCorretor" required [(ngModel)]="imovel.corretor" name="corretor">
     </div>
 
     <button type="submit" class="btn btn-success">Submit</button>

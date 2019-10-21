@@ -6,7 +6,7 @@ import { ImovelListComponent } from './imoveis/imovel-list.component';
 import { UpdateImovelComponent } from './imoveis/update-imovel.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'imovel', pathMatch: 'full' },
+  { path: '', redirectTo: '', pathMatch: 'full' },
   { path: 'imoveis', component: ImovelListComponent },
   { path: 'add', component: CreateImovelComponent },
   { path: 'update/:id', component: UpdateImovelComponent },
