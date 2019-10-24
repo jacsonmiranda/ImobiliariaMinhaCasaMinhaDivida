@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
   templateUrl: "create-imovel.component.html",
   styleUrls: ["create-imovel.component.css"]
 })
-export class CreateImovelComponent implements OnInit {
+export class CreateImovel implements OnInit {
 
-  imovel: Imovel = new Imovel();
+  imovel: Imovel;
   submitted = false;
 
   constructor(private imovelService: ImovelService,
@@ -19,14 +19,14 @@ export class CreateImovelComponent implements OnInit {
   ngOnInit() {
   }
 
-  newImovel(): void {
+  newImovel() {
     this.submitted = false;
     this.imovel = new Imovel();
   }
 
   save() {
-    this.imovelService.createImovel(this.imovel)
-      .subscribe(data => console.log(data), error => console.log(error));
+    this.imovelService.createImovel(this.imovel);
+      //.subscribe(data => console.log(data), error => console.log(error));
     this.imovel = new Imovel();
     this.gotoList();
   }

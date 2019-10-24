@@ -1,7 +1,7 @@
 import { Imovel } from './imovel';
 import { Component, OnInit, Input } from '@angular/core';
 import { ImovelService } from './imovel.service';
-import { ImovelListComponent } from './imovel-list.component';
+import { ImovelList } from './imovel-list.component';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './imovel-details.component.html',
   styleUrls: ['./imovel-details.component.css']
 })
-export class ImovelDetailsComponent implements OnInit {
+export class ImovelDetails implements OnInit {
 
   id: number;
   imovel: Imovel;

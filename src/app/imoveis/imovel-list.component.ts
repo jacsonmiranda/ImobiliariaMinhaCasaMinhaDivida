@@ -1,4 +1,4 @@
-import { ImovelDetailsComponent } from './imovel-details.component';
+import { ImovelDetails } from './imovel-details.component';
 import { Observable } from "rxjs";
 import { ImovelService } from "./imovel.service";
 import { Imovel } from "./imovel";
@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
   templateUrl: "imovel-list.component.html",
   styleUrls: ["imovel-list.component.css"]
 })
-export class ImovelListComponent implements OnInit {
-  imoveis: Observable<Imovel[]>;
+export class ImovelList implements OnInit {
+  imoveis: Observable <Imovel[]>;
 
   constructor(private imovelService: ImovelService,
     private router: Router) {}
@@ -25,7 +25,7 @@ export class ImovelListComponent implements OnInit {
   }
 
   deleteImovel(id_imovel: number) {
-    this.imovelService.deleteImovel(id)
+    this.imovelService.deleteImovel(number)
       .subscribe(
         data => {
           console.log(data);
@@ -35,6 +35,6 @@ export class ImovelListComponent implements OnInit {
   }
 
   imovelDetails(id: number){
-    this.router.navigate(['details', id_imovel]);
+    this.router.navigate(['details', id]);
   }
 }

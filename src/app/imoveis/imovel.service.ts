@@ -7,36 +7,28 @@ import { Observable } from 'rxjs';
 })
 export class ImovelService {
 
-  allImoveis:Imovel[] = [
-    {
-      "id": "1",
-      "endereco": "Lalit",
-      "valor": "9999",
-      "corretor": "Jorge",
-      "proprietario": "Associate Lead"
-    }
-  ];
-  getAllImoveis():Imovel[]{
-      return this.allImoveis;
-    }
+  constructor(private http: HttpClient) { }
 
-    addImovel(imovel:Imovel){
-      this.allImoveis.push(imovel);
-    }
+  templateUrl: string = 'http://localhost:8080/imoveis';
 
-    updateImovel(imovel:Imovel){
-      var updateImovel = this.allImoveis.find(emp => emp.id == imovel.id);
-      updateImovel.endereco = imovel.endereco;
-      updateImovel.valor = imovel.valor;
-      updateImovel.corretor = imovel.corretor;
-      updateImovel.proprietario = imovel.proprietario;
-    }
-
-    deleteImovel(id:string){
-      this.allImoveis = this.allImoveis.filter(imovel => imovel.id != id);
-    }
-
-    getImovel(id:string):Imoveis{
-      return this.allImoveis.find(emp => emp.id == id);
-    }
+  ImovelList():Observable<HttpClient>{
+    return this.http.get(this.templateUrl);
   }
+
+  ImovelDetails(id_imovel: number): Observable<HttpClient> {
+    return this.http.get<HttpClient>(this.baseUrl + id_imovel);
+  }
+
+  CreateImovel(id_imovel: String): Observable<HttpClient> {
+    return this.http.post<HttpClient>(this.baseUrl, id_imoveld);
+  }
+
+  UpdateImovel(id_imovel: String): Observable<HttpClient> {
+    return this.http.put<HttpClient>(this.baseUrl + id_imoveld);
+  }
+
+  deleteImovel(id_imoveld: String): Observable<HttpClient> {
+    return this.http.delete<HttpClient>(this.baseUrl + id_imoveld);
+  }
+
+}

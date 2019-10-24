@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './update-imovel.component.html',
   styleUrls: ['./update-imovel.component.css']
 })
-export class UpdateImovelComponent implements OnInit {
+export class UpdateImovel implements OnInit {
 
   id: number;
   imovel: Imovel;
