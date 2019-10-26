@@ -11,24 +11,24 @@ export class ImovelService {
 
   templateUrl: string = 'http://localhost:8080/imoveis';
 
-  ImovelList():Observable<HttpClient>{
+  GetImovelList():Observable<HttpClient>{
     return this.http.get(this.templateUrl);
   }
 
-  ImovelDetails(id_imovel: number): Observable<HttpClient> {
-    return this.http.get<HttpClient>(this.baseUrl + id_imovel);
+  ImovelDetails(id_imovel: number): Observable<any> {
+    return this.http.get<any>(this.templateUrl + id_imovel);
   }
 
-  CreateImovel(id_imovel: String): Observable<HttpClient> {
-    return this.http.post<HttpClient>(this.baseUrl, id_imoveld);
+  CreateImovel(id_imovel: String): Observable<any> {
+    return this.http.post<any>(this.templateUrl, id_imoveld);
   }
 
-  UpdateImovel(id_imovel: String): Observable<HttpClient> {
-    return this.http.put<HttpClient>(this.baseUrl + id_imoveld);
+  UpdateImovel(id_imovel: String): Observable<any> {
+    return this.http.put<any>(this.templateUrl + id_imoveld);
   }
 
-  deleteImovel(id_imoveld: String): Observable<HttpClient> {
-    return this.http.delete<HttpClient>(this.baseUrl + id_imoveld);
+  deleteImovel(id_imoveld: String): Observable<any> {
+    return this.http.delete<any>(this.templateUrl + id_imoveld);
   }
 
 }

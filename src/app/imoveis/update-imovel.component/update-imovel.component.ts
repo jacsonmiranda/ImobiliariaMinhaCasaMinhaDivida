@@ -1,5 +1,5 @@
-import { ImovelService } from "./imovel.service";
-import { Imovel } from "./imovel";
+import { ImovelService } from "../imovel.service";
+import { Imovel } from "../imovel";
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from '@angular/router';
 

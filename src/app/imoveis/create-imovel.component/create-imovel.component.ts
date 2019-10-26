@@ -1,5 +1,5 @@
-import { ImovelService } from "./imovel.service";
-import { Imovel } from "./imovel";
+import { ImovelService } from "../imovel.service";
+import { Imovel } from "../imovel";
 import { Component, OnInit } from "@angular/core";
 import { Router } from '@angular/router';
 
@@ -25,7 +25,7 @@ export class CreateImovel implements OnInit {
   }
 
   save() {
-    this.imovelService.createImovel(this.imovel);
+    this.imovelService.CreateImovel(this.imovel);
       //.subscribe(data => console.log(data), error => console.log(error));
     this.imovel = new Imovel();
     this.gotoList();

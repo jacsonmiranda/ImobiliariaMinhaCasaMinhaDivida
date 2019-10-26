@@ -1,7 +1,7 @@
-import { ImovelDetails } from './imovel-details.component';
+import { ImovelDetails } from '../imovel-details.component';
 import { Observable } from "rxjs";
-import { ImovelService } from "./imovel.service";
-import { Imovel } from "./imovel";
+import { ImovelService } from "../imovel.service";
+import { Imovel } from "../imovel";
 import { Component, OnInit } from "@angular/core";
 import { Router } from '@angular/router';
 
@@ -21,11 +21,11 @@ export class ImovelList implements OnInit {
   }
 
   reloadData() {
-    this.imoveis = this.imovelService.getImoveisList();
+    this.imoveis = this.imovelService.GetImovelList();
   }
 
   deleteImovel(id_imovel: number) {
-    this.imovelService.deleteImovel(number)
+    this.imovelService.deleteImovel(id_imovel)
       .subscribe(
         data => {
           console.log(data);
