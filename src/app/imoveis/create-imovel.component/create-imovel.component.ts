@@ -26,7 +26,6 @@ export class CreateImovel implements OnInit {
 
   save() {
     this.imovelService.CreateImovel(this.imovel);
-      //.subscribe(data => console.log(data), error => console.log(error));
     this.imovel = new Imovel();
     this.gotoList();
   }

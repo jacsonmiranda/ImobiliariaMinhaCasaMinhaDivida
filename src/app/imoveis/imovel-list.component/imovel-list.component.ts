@@ -1,4 +1,4 @@
-import { ImovelDetails } from '../imovel-details.component';
+import { ImovelDetails } from '../imovel-details.component/imovel-details.component';
 import { Observable } from "rxjs";
 import { ImovelService } from "../imovel.service";
 import { Imovel } from "../imovel";

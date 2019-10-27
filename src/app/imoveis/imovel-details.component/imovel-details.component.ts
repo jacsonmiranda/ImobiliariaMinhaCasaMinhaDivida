@@ -1,7 +1,7 @@
 import { Imovel } from '../imovel';
 import { Component, OnInit, Input } from '@angular/core';
 import { ImovelService } from '../imovel.service';
-import { ImovelList } from '../imovel-list.component';
+import { ImovelList } from '../imovel-list.component/imovel-list.component';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
